@@ -1,0 +1,31 @@
+//
+//  DetailView.swift
+//  MVP
+//
+//  Created by Zhanibek Lukpanov on 29.12.2021.
+//
+
+import UIKit
+
+ class DetailView: UIViewController {
+    
+    @IBOutlet weak var detailLabel: UILabel!
+    
+    var presenter: DetailViewPresenter!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Detail"
+        view.backgroundColor = .systemBackground
+        
+        presenter?.setComments()
+    }
+    
+}
+
+// MARK: - DetailViewProtocol
+extension DetailView: DetailViewProtocol {
+    func setComment(comment: Comment?) {
+        detailLabel.text = comment?.body
+    }
+}
