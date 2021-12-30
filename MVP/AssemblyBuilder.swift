@@ -8,13 +8,13 @@
 import UIKit
 
 protocol AssemblyBuilderProtocol: AnyObject {
-     func createMain() -> UIViewController
-     func createDetailVC(comment: Comment?) -> UIViewController
+    func createMain(router: RouterProtocol) -> UIViewController
+     func createDetailVC(comment: Comment?, router: RouterProtocol) -> UIViewController
 }
 
 final class AssemblyBuilder: AssemblyBuilderProtocol {
     
-     func createMain() -> UIViewController {
+     func createMain(router: RouterProtocol) -> UIViewController {
         let view = MainViewController()
         let networkService = NetworkService()
         let presenter = MainPresenter(view: view, networkService: networkService)
@@ -22,7 +22,7 @@ final class AssemblyBuilder: AssemblyBuilderProtocol {
         return view
     }
     
-     func createDetailVC(comment: Comment?) -> UIViewController {
+     func createDetailVC(comment: Comment?, router: RouterProtocol) -> UIViewController {
         let view = DetailView()
         let presenter = DetailPresenter(view: view, comment: comment)
         view.presenter = presenter

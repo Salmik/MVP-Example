@@ -30,16 +30,22 @@ final class Router: RouterProtocol {
     
     func initialVC() {
         if let navigationController = navigationController {
-           // guard let mainVC = assemblyBuilder
+            guard let mainVC = assemblyBuilder?.createMain(router: self) else { return }
+            navigationController.viewControllers = [mainVC]
         }
     }
     
     func showDetail(comment: Comment?) {
-        
+        if let navigationController = navigationController {
+            guard let mainVC = assemblyBuilder?.createDetailVC(comment: comment, router: self) else { return }
+            navigationController.pushViewController(mainVC, animated: true)
+        }
     }
     
     func popToRoot() {
-        
+        if let navigationController = navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
     }
     
 }
