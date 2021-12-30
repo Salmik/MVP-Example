@@ -14,10 +14,11 @@
 		AC326319277C491A000EE738 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC326317277C491A000EE738 /* LaunchScreen.storyboard */; };
 		AC326321277C4C05000EE738 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC326320277C4C05000EE738 /* Comment.swift */; };
 		AC326323277C4C2D000EE738 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC326322277C4C2D000EE738 /* Presenter.swift */; };
-		AC326325277C57CA000EE738 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC326324277C57CA000EE738 /* ModuleBuilder.swift */; };
+		AC326325277C57CA000EE738 /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC326324277C57CA000EE738 /* AssemblyBuilder.swift */; };
 		AC326327277C59CD000EE738 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC326326277C59CD000EE738 /* MainView.xib */; };
 		AC32632F277C6331000EE738 /* MVPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC32632E277C6331000EE738 /* MVPTests.swift */; };
 		AC326336277C6D93000EE738 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC326335277C6D93000EE738 /* NetworkService.swift */; };
+		AC5DE88C277DBD3000554E62 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5DE88B277DBD2F00554E62 /* RouterProtocol.swift */; };
 		AC8758CC277C888400F8A7D5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8758CB277C888400F8A7D5 /* DetailView.swift */; };
 		AC8758CE277C88D700F8A7D5 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8758CD277C88D700F8A7D5 /* DetailView.xib */; };
 		AC8758D2277C8A7F00F8A7D5 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8758D1277C8A7F00F8A7D5 /* DetailPresenter.swift */; };
@@ -43,11 +44,12 @@
 		AC32631A277C491A000EE738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC326320277C4C05000EE738 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		AC326322277C4C2D000EE738 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
-		AC326324277C57CA000EE738 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		AC326324277C57CA000EE738 /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
 		AC326326277C59CD000EE738 /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		AC32632C277C6331000EE738 /* MVPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC32632E277C6331000EE738 /* MVPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPTests.swift; sourceTree = "<group>"; };
 		AC326335277C6D93000EE738 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AC5DE88B277DBD2F00554E62 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		AC8758CB277C888400F8A7D5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		AC8758CD277C88D700F8A7D5 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		AC8758D1277C8A7F00F8A7D5 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -94,13 +96,14 @@
 			children = (
 				AC32630C277C4918000EE738 /* AppDelegate.swift */,
 				AC32630E277C4918000EE738 /* SceneDelegate.swift */,
-				AC326324277C57CA000EE738 /* ModuleBuilder.swift */,
+				AC326324277C57CA000EE738 /* AssemblyBuilder.swift */,
 				AC8758CA277C885700F8A7D5 /* Detail Module */,
 				AC32633A277C6DFF000EE738 /* Service Layer */,
 				AC8758C9277C884900F8A7D5 /* Main module */,
 				AC326315277C491A000EE738 /* Assets.xcassets */,
 				AC326317277C491A000EE738 /* LaunchScreen.storyboard */,
 				AC32631A277C491A000EE738 /* Info.plist */,
+				AC5DE88B277DBD2F00554E62 /* RouterProtocol.swift */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -286,12 +289,13 @@
 			files = (
 				AC326311277C4919000EE738 /* MainViewController.swift in Sources */,
 				AC8758CC277C888400F8A7D5 /* DetailView.swift in Sources */,
+				AC5DE88C277DBD3000554E62 /* RouterProtocol.swift in Sources */,
 				AC8758D2277C8A7F00F8A7D5 /* DetailPresenter.swift in Sources */,
 				AC326321277C4C05000EE738 /* Comment.swift in Sources */,
 				AC32630D277C4918000EE738 /* AppDelegate.swift in Sources */,
 				AC32630F277C4918000EE738 /* SceneDelegate.swift in Sources */,
 				AC326323277C4C2D000EE738 /* Presenter.swift in Sources */,
-				AC326325277C57CA000EE738 /* ModuleBuilder.swift in Sources */,
+				AC326325277C57CA000EE738 /* AssemblyBuilder.swift in Sources */,
 				AC326336277C6D93000EE738 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

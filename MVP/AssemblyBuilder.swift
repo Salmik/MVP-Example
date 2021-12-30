@@ -7,12 +7,12 @@
 
 import UIKit
 
-protocol Builder: AnyObject {
+protocol AssemblyBuilderProtocol: AnyObject {
     static func createMain() -> UIViewController
     static func createDetailVC(comment: Comment?) -> UIViewController
 }
 
-final class ModuleBuilder: Builder {
+final class AssemblyBuilder: AssemblyBuilderProtocol {
     
     static func createMain() -> UIViewController {
         let view = MainViewController()
