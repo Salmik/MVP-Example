@@ -94,16 +94,10 @@
 		AC32630B277C4918000EE738 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
-				AC32630C277C4918000EE738 /* AppDelegate.swift */,
-				AC32630E277C4918000EE738 /* SceneDelegate.swift */,
-				AC326324277C57CA000EE738 /* AssemblyBuilder.swift */,
-				AC5DE88B277DBD2F00554E62 /* RouterProtocol.swift */,
-				AC8758CA277C885700F8A7D5 /* Detail Module */,
 				AC32633A277C6DFF000EE738 /* Service Layer */,
-				AC8758C9277C884900F8A7D5 /* Main module */,
-				AC326315277C491A000EE738 /* Assets.xcassets */,
-				AC326317277C491A000EE738 /* LaunchScreen.storyboard */,
-				AC32631A277C491A000EE738 /* Info.plist */,
+				ACD4623D2780529B0038FECC /* Additional files */,
+				ACD4623E278052AF0038FECC /* Router + Builder */,
+				ACD4623C278052760038FECC /* Screens */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -183,6 +177,36 @@
 				AC8758D1277C8A7F00F8A7D5 /* DetailPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		ACD4623C278052760038FECC /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				AC8758CA277C885700F8A7D5 /* Detail Module */,
+				AC8758C9277C884900F8A7D5 /* Main module */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		ACD4623D2780529B0038FECC /* Additional files */ = {
+			isa = PBXGroup;
+			children = (
+				AC32630C277C4918000EE738 /* AppDelegate.swift */,
+				AC32630E277C4918000EE738 /* SceneDelegate.swift */,
+				AC326315277C491A000EE738 /* Assets.xcassets */,
+				AC326317277C491A000EE738 /* LaunchScreen.storyboard */,
+				AC32631A277C491A000EE738 /* Info.plist */,
+			);
+			path = "Additional files";
+			sourceTree = "<group>";
+		};
+		ACD4623E278052AF0038FECC /* Router + Builder */ = {
+			isa = PBXGroup;
+			children = (
+				AC326324277C57CA000EE738 /* AssemblyBuilder.swift */,
+				AC5DE88B277DBD2F00554E62 /* RouterProtocol.swift */,
+			);
+			path = "Router + Builder";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
