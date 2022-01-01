@@ -21,7 +21,11 @@ import UIKit
         presenter?.setComments()
     }
     
-}
+     @IBAction func popToRootButton(_ sender: UIButton) {
+         presenter.tap()
+     }
+     
+ }
 
 // MARK: - DetailViewProtocol
 extension DetailView: DetailViewProtocol {

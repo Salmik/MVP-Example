@@ -16,6 +16,7 @@ protocol MainViewPresenter: AnyObject {
     init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func getComments()
     var comments: [Comment]? { get set }
+    func tapOnTheComment(comment: Comment?)
 }
 
 class MainPresenter: MainViewPresenter {
@@ -48,6 +49,10 @@ class MainPresenter: MainViewPresenter {
                 }
             }
         })
+    }
+    
+    func tapOnTheComment(comment: Comment?) {
+        router?.showDetail(comment: comment)
     }
     
 }

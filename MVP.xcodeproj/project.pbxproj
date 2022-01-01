@@ -97,13 +97,13 @@
 				AC32630C277C4918000EE738 /* AppDelegate.swift */,
 				AC32630E277C4918000EE738 /* SceneDelegate.swift */,
 				AC326324277C57CA000EE738 /* AssemblyBuilder.swift */,
+				AC5DE88B277DBD2F00554E62 /* RouterProtocol.swift */,
 				AC8758CA277C885700F8A7D5 /* Detail Module */,
 				AC32633A277C6DFF000EE738 /* Service Layer */,
 				AC8758C9277C884900F8A7D5 /* Main module */,
 				AC326315277C491A000EE738 /* Assets.xcassets */,
 				AC326317277C491A000EE738 /* LaunchScreen.storyboard */,
 				AC32631A277C491A000EE738 /* Info.plist */,
-				AC5DE88B277DBD2F00554E62 /* RouterProtocol.swift */,
 			);
 			path = MVP;
 			sourceTree = "<group>";

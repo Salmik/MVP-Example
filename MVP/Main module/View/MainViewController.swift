@@ -33,9 +33,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let comment = presenter?.comments?[indexPath.row] else { return }
-        let builder = AssemblyBuilder()
-        let detailVC = builder.createDetailVC(comment: comment)
-        navigationController?.pushViewController(detailVC, animated: true)
+        presenter.tapOnTheComment(comment: comment)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

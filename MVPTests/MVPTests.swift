@@ -8,45 +8,82 @@
 import XCTest
 @testable import MVP
 
+// MARK: - MockView
 class MockView: MainViewProtocol {
-    var title: String?
-    func setGreetin(with: String) {
-        self.title = with
+    
+    func success() {
+        
     }
+    
+    func failure() {
+        
+    }
+
 }
 
+// MARK: - MockNetworkService
+class MockNetworkService: NetworkServiceProtocol {
+    var comments: [Comment]!
+    
+    init() { }
+    
+    convenience init(comments: [Comment]?) {
+        self.init()
+        self.comments = comments
+    }
+    
+    func getComments(completion: @escaping (Result<[Comment]?, Error>) -> Void) {
+        if let comments = comments {
+            completion(.success(comments))
+        } else {
+            let error = NSError(domain: "", code: 0, userInfo: nil)
+            completion(.failure(error))
+        }
+    }
+    
+}
+
+// MARK: - MVPTests
 class MVPTests: XCTestCase {
     
     var view: MockView!
-    var person: Person!
     var presenter: MainPresenter!
+    var networkService: NetworkServiceProtocol!
+    var router: RouterProtocol!
+    var comments = [Comment]()
 
     override func setUp() {
-       view = MockView()
-       person = Person(firstName: "Baz", lastName: "Bar")
-       presenter = MainPresenter(view: view, person: person)
+        let navVC = UINavigationController()
+        let assemblyBuilder = AssemblyBuilder()
+        router = Router(navigationController: navVC, assemblyBuilder: assemblyBuilder)
     }
 
     override func tearDown() {
         view = nil
-        person = nil
+        networkService = nil
         presenter = nil
     }
+    
+    func testGetSuccessComments() {
+        let comment = Comment(postId: 1, id: 2, name: "Bar", email: "Baz", body: "Foo")
+        comments.append(comment)
+        
+        view = MockView()
+        networkService = MockNetworkService(comments: comments)
+        presenter = MainPresenter(view: view, networkService: networkService, router: router)
+        
+        var catchComments: [Comment]?
+        
+        networkService.getComments { result in
+            switch result {
+            case .success(let comments): catchComments = comments
+            case .failure(let error): print(error)
+                
+            }
+        }
+        
+        XCTAssertNotEqual(catchComments?.count, 0)
 
-    func testModuleIsNotNil() {
-        XCTAssertNotNil(view, "view is not nil")
-        XCTAssertNotNil(person, "person is not nil")
-        XCTAssertNotNil(presenter, "presenter is not nil")
-    }
-    
-    func testView() {
-        presenter.showGreating()
-        XCTAssertEqual(view.title, "Baz Bar")
-    }
-    
-    func testPersonModel() {
-        XCTAssertEqual(person.firstName, "Baz")
-        XCTAssertEqual(person.lastName, "Bar")
     }
 
 }
