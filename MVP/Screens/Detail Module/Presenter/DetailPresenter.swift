@@ -18,7 +18,7 @@ protocol DetailViewPresenter: AnyObject {
     func tap()
 }
 
-class DetailPresenter: DetailViewPresenter {
+final class DetailPresenter: DetailViewPresenter {
     
     weak var view: DetailViewProtocol?
     var comment: Comment?

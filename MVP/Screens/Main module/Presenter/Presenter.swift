@@ -19,7 +19,7 @@ protocol MainViewPresenter: AnyObject {
     func tapOnTheComment(comment: Comment?)
 }
 
-class MainPresenter: MainViewPresenter {
+final class MainPresenter: MainViewPresenter {
     
     weak var view: MainViewProtocol?
     let networkService: NetworkServiceProtocol
