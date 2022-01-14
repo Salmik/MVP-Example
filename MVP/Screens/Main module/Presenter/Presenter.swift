@@ -43,7 +43,7 @@ final class MainPresenter: MainViewPresenter {
                 case .success(let comments):
                     self.comments = comments
                     self.view?.success()
-                    print("Test merge conflict")
+                    print(comments)
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.view?.failure()
@@ -52,7 +52,7 @@ final class MainPresenter: MainViewPresenter {
         })
     }
     
-    func something() {
+    func toDO() {
         
     }
 
