@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window?.rootViewController = navingationVC
         window?.makeKeyAndVisible()
+        // test Meesage from here
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
