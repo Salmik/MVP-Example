@@ -43,12 +43,17 @@ final class MainPresenter: MainViewPresenter {
                 case .success(let comments):
                     self.comments = comments
                     self.view?.success()
+                    print("Test merge conflict")
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.view?.failure()
                 }
             }
         })
+    }
+    
+    func something() {
+        
     }
 
     func tapOnTheComment(comment: Comment?) {
