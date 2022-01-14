@@ -20,24 +20,24 @@ protocol MainViewPresenter: AnyObject {
 }
 
 final class MainPresenter: MainViewPresenter {
-    
+
     weak var view: MainViewProtocol?
     let networkService: NetworkServiceProtocol
     var router: RouterProtocol?
-    
+
     var comments: [Comment]?
-    
+
     required init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
         self.view = view
         self.networkService = networkService
         self.router = router
         getComments()
     }
-    
+
     func getComments() {
         networkService.getComments(completion: {[weak self] result in
             guard let self = self else { return }
-            
+
             DispatchQueue.main.async {
                 switch result {
                 case .success(let comments):
@@ -50,9 +50,9 @@ final class MainPresenter: MainViewPresenter {
             }
         })
     }
-    
+
     func tapOnTheComment(comment: Comment?) {
         router?.showDetail(comment: comment)
     }
-    
+
 }
