@@ -13,7 +13,7 @@ protocol AssemblyBuilderProtocol: AnyObject {
 }
 
 final class AssemblyBuilder: AssemblyBuilderProtocol {
-    
+
      func createMain(router: RouterProtocol) -> UIViewController {
         let view = MainViewController()
         let networkService = NetworkService()
@@ -21,12 +21,12 @@ final class AssemblyBuilder: AssemblyBuilderProtocol {
         view.presenter = presenter
         return view
     }
-    
+
      func createDetailVC(comment: Comment?, router: RouterProtocol) -> UIViewController {
         let view = DetailView()
         let presenter = DetailPresenter(view: view, comment: comment, router: router)
         view.presenter = presenter
         return view
     }
-    
+
 }

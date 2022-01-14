@@ -8,11 +8,11 @@
 import UIKit
 
 final class DetailView: UIViewController {
-    
+
     @IBOutlet weak var detailLabel: UILabel!
-    
+
     var presenter: DetailViewPresenter!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Detail"
@@ -20,11 +20,11 @@ final class DetailView: UIViewController {
         
         presenter?.setComments()
     }
-    
+
      @IBAction func popToRootButton(_ sender: UIButton) {
          presenter.tap()
      }
-     
+
  }
 
 // MARK: - DetailViewProtocol

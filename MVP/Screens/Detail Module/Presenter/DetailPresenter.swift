@@ -19,23 +19,23 @@ protocol DetailViewPresenter: AnyObject {
 }
 
 final class DetailPresenter: DetailViewPresenter {
-    
+
     weak var view: DetailViewProtocol?
     var comment: Comment?
     var router: RouterProtocol?
-    
+
     required init(view: DetailViewProtocol, comment: Comment?, router: RouterProtocol) {
         self.view = view
         self.comment = comment
         self.router = router
     }
-    
+
      func setComments() {
         self.view?.setComment(comment: comment)
     }
-    
+
     func tap() {
         router?.popToRoot()
     }
-    
+
 }
