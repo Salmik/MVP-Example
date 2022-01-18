@@ -51,10 +51,6 @@ final class MainPresenter: MainViewPresenter {
             }
         })
     }
-    
-    func something() {
-        
-    }
 
     func tapOnTheComment(comment: Comment?) {
         router?.showDetail(comment: comment)
